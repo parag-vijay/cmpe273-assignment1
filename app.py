@@ -28,6 +28,7 @@ def file_content(filename):
     except UnknownObjectException:
         if type(repo) is not repository_class:
             result = "The run time URL didn't point to a valid github repository. Please provide a valid URL."
+        elif "json" in filename:
             result = "This JSON file is not available."
         elif "yml" in filename:
             result = "This YML file is not available."
